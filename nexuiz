@@ -35,7 +35,7 @@ if ($Command eq "")
 	$Command = "NONE";
 }
 
-my $running=`ps ax|grep Nexuiz|grep -v grep`;
+my $running=`ps ax|grep nexuiz-linux|grep -v grep`;
 
 if ($Command eq "start")
 {
@@ -59,7 +59,7 @@ elsif ($Command eq "stop")
 	if ($running ne "")
 	{
 		# Process is running, kill it
-		system("killall Nexuiz");
+		system("killall nexuiz-linux");
 	}
 }
 elsif ($Command eq "restart")
@@ -71,7 +71,7 @@ elsif ($Command eq "restart")
 	}
 	if ($running ne "")
 	{
-		system("killall Nexuiz");
+		system("killall nexuiz-linux");
 	}
 }
 elsif ($Command eq "status")
